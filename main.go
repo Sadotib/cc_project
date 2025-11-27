@@ -38,7 +38,8 @@ func main() {
 
 	r.Handle("/public/*", public())
 
-	r.Get("/home", handlers.HomeHandler)
+	r.Get("/", handlers.HomeHandler)
+	r.Get("/cloud", handlers.CloudHandler)
 
 	log.Fatal(http.ListenAndServe(listenAddr, r))
 

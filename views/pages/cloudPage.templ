@@ -1,0 +1,14 @@
+package pages
+
+import "github.com/Sadotib/cc_project/views/layouts"
+import "github.com/Sadotib/cc_project/views/sections"
+// import "github.com/Sadotib/cc_project/views/sections"
+
+templ Cloud(imagePath string){
+    @layouts.Base(){
+        @sections.Heading("Cloud")
+        @sections.ImageContainer(imagePath,"Rand Img")
+        @sections.Footing("Project")
+        @sections.Footer("© 2024 Cloud Project" )
+    }
+} 

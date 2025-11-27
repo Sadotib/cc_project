@@ -1,0 +1,158 @@
+package layouts
+
+templ Base(){
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CC Project</title>
+    <meta name="description"
+        content="CC Project for 7th Sem Btech CSE at JEC" />
+    <meta name="author" content="BIN" />
+
+    <meta property="og:title" content="CC Project" />
+    <meta property="og:description"
+        content="CC Project for 7th Sem Btech CSE at JEC" />
+    <meta property="og:type" content="website" />
+    //
+    // <meta property="og:url" content="https://yesfix.in" />
+    //
+    // <meta property="og:image" content="https://yesfix.in/public/yesfix-logo.png" />
+    <meta property="og:image:alt" content="BIN Logo"/>
+    <meta property="og:site_name" content="CC Project" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CC Project" />
+    <meta name="twitter:description"
+        content="CC Project for 7th Sem Btech CSE at JEC" />
+    // <link href="/public/styles.css" rel="stylesheet" />
+    // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    // <link rel="icon" type="image/png" href="/public/favicon.png" />
+    // <script src="https://unpkg.com/htmx.org@2.0.4"
+    //     integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+    //     crossorigin="anonymous"></script>
+    // <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <!-- Webfonts and page styles: black background, gradient headings -->
+    // <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+
+        /* Page background and base type */
+        html, body {
+            height: 100%;
+            margin: 0;
+            background-color: #000; /* black page background */
+            color: #eee;
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Make body a column flex container so footer can sit at the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1 0 auto; /* take available vertical space so footer is pushed to bottom */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* center main content horizontally */
+            justify-content: flex-start;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        /* Stylised heading with hot-pink to bright-orange gradient */
+        .bebas-neue-regular {
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.25rem;
+        }
+
+
+        .gradient-text {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff1493 0%, #ff7a00 100%); /* hot pink -> bright orange */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Utility: center images inside their container */
+        .center-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-title {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3; /* front the image */
+            margin: 0;
+            line-height: 1;
+            width: 100%;
+            font-size: clamp(48px, 20vw, 320px); /* responsive large type */
+            pointer-events: none;
+            text-align: center;
+            -webkit-text-stroke: 1px rgba(0,0,0,0.25); /* subtle stroke for readability */
+            text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+        }
+
+        .hero-footing {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* behind the image */
+            margin: 0;
+            line-height: 1;
+            width: 100%;
+            font-size: 30vw; /* responsive large type */
+
+            pointer-events: none;
+            text-align: center;
+            -webkit-text-stroke: 1px rgba(0,0,0,0.25); /* subtle stroke for readability */
+            text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+        }
+
+        .hero-image {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, 0); /* image top sits at vertical center of heading */
+            z-index: 2;
+            width: 50vw;
+            max-width: 520px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            display: block;
+        }
+    </style>
+    
+</head>
+
+<body id="body">
+
+    <main>
+        {children...}
+    </main>
+
+    <!-- Footer -->
+    // @components.Footer()
+    // <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+
+</html>
+}

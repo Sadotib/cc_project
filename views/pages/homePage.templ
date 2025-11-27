@@ -1,0 +1,13 @@
+package pages
+
+import "github.com/Sadotib/cc_project/views/sections"
+import "github.com/Sadotib/cc_project/views/layouts"
+
+templ Home(){
+    @layouts.Base(){
+        @sections.Heading("Cloud")
+        
+        @sections.Footing("Project")
+        @sections.Footer("© 2024 Cloud Project" )
+    }
+}

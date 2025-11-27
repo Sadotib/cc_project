@@ -17,16 +17,18 @@ install:
 # 	@mv tailwindcss bin/
 # 	@echo "Running Tailwind..."
 # 	@./bin/tailwindcss -i views/css/app.css -o public/styles.css --minify || { echo "Tailwind build failed"; exit 1; }
-	@go get
-	@go mod vendor
-	@go mod tidy
-	@go build -tags=dev -o bin/app main.go
+	go get
+	go mod vendor
+	go mod tidy
+	go build -tags=dev -o bin/app main.go
 
 
 
 build: 
-	@npx tailwindcss -i views/css/app.css -o public/styles.css
-	@go build -o bin/app main.go
+	go build -tags=dev -o bin/app
+
+start:
+	./bin/app
 
 css:
 	@npx tailwindcss -i views/css/app.css -o public/styles.css --watch
